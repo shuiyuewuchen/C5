@@ -824,6 +824,27 @@ __version__ = "0.3.0"
 __all__ = ["__version__"]
 '''
 
+TEMPLATES["src/{{package}}/__main__.py"] = '''"""{{name}} 命令行入口：python -m {{package}}"""
+
+import argparse
+
+from .core import hello
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        prog="{{slug}}",
+        description="{{description}}",
+    )
+    parser.add_argument("name", nargs="?", default="world", help="问候对象")
+    args = parser.parse_args()
+    print(hello(args.name))
+
+
+if __name__ == "__main__":
+    main()
+'''
+
 TEMPLATES["src/{{package}}/core.py"] = '''"""{{name}} 的核心逻辑。
 
 从这里开始实现你的业务代码。保持函数纯粹、命名清晰，并为每个公开函数

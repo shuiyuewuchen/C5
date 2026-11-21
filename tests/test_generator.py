@@ -67,7 +67,8 @@ class GenerateTest(unittest.TestCase):
                 "README.md", "LICENSE", "AI_LOG.md", "ATTRIBUTION.md",
                 "CONTRIBUTING.md", "CHANGELOG.md", ".gitignore",
                 ".github/workflows/ci.yml", ".github/ISSUE_TEMPLATE/bug_report.md",
-                "src/demo_tool/__init__.py", "tests/test_smoke.py",
+                "src/demo_tool/__init__.py", "src/demo_tool/__main__.py",
+                "src/demo_tool/core.py", "tests/test_smoke.py",
             ):
                 self.assertTrue((out / rel).is_file(), "缺少 %s" % rel)
 
