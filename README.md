@@ -248,7 +248,7 @@ make test
 
 ## License
 
-MIT © 2026 Elite20。详见 [LICENSE](./LICENSE)。
+MIT © 2026 赵心皓。详见 [LICENSE](./LICENSE)。
 
 ---
 

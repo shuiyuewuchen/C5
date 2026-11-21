@@ -9,7 +9,7 @@ description = "输入一份 JSON/YAML 配置，输出一个文档齐全、社区
 readme = "README.md"
 requires-python = ">=3.9"
 license = { text = "MIT" }
-authors = [{ name = "Elite20" }]
+authors = [{ name = "赵心皓" }]
 keywords = ["github", "scaffold", "open-source", "automation", "zero-dependency"]
 classifiers = [
   "Development Status :: 4 - Beta",
