@@ -1,0 +1,18 @@
+{
+  "name": "hello-forge",
+  "description": "输入一句话需求，输出一份可直接推送的仓库骨架。",
+  "owner": "your-github-id",
+  "license": "MIT",
+  "language": "Python",
+  "python_version": "3.9",
+  "keywords": ["scaffold", "github", "automation"],
+  "features": [
+    "零运行时依赖，clone 后可立即运行",
+    "一份配置生成 README / License / CI / Issue 模板",
+    "生成前校验配置，错误信息可操作",
+    "默认不覆盖已有文件"
+  ],
+  "ci": true,
+  "community": true,
+  "ai_assisted": true
+}

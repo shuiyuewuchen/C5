@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+# 免安装启动脚本：clone 后直接 ./repo-forge --help
+set -e
+HERE=$(CDPATH= cd -- "$(dirname -- "$0")" && pwd)
+PYTHONPATH="$HERE/src${PYTHONPATH:+:$PYTHONPATH}" exec python3 -m hello_forge "$@"

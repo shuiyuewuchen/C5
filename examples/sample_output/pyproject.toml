@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "hello-forge"
+version = "0.3.0"
+description = "输入一句话需求，输出一份可直接推送的仓库骨架。"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "your-github-id" }]
+keywords = ["scaffold", "github", "automation"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Code Generators",
+]
+
+[project.scripts]
+hello-forge = "hello_forge.cli:main"
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+dev = ["coverage>=7.0", "ruff>=0.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+hello_forge = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
