@@ -1,0 +1,6 @@
+# 默认所有者
+* @your-github-id
+
+# 核心代码需要额外审查
+/src/repo_forge/config.py @your-github-id
+/src/repo_forge/generator.py @your-github-id
