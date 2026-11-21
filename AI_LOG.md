@@ -112,7 +112,7 @@ CLI 打印预演结果后再写入。避免用户本地改动被无声吞掉。
 ## 四、可复现命令
 
 ```bash
-git clone https://github.com/your-github-id/repo-forge.git && cd repo-forge
+git clone https://github.com/shuiyuewuchen/C5.git && cd C5
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 make test        # 验证 AI 生成的测试确实通过

@@ -32,7 +32,7 @@
 
 ## 执行
 
-违反行为准则的情况可通过 https://github.com/your-github-id/repo-forge/issues 或维护者邮箱举报。所有投诉都将被审查和调查，并做出必要和适当的回应。维护者必须尊重举报者的隐私和安全。
+违反行为准则的情况可通过 https://github.com/shuiyuewuchen/C5/issues 或维护者邮箱举报。所有投诉都将被审查和调查，并做出必要和适当的回应。维护者必须尊重举报者的隐私和安全。
 
 ## 署名
 

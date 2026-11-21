@@ -2,7 +2,7 @@
 
 > 输入一份 JSON/YAML 配置，输出一个文档齐全、社区要素完备、clone 后 5 分钟可运行的 GitHub 开源仓库骨架。
 
-[![CI](https://github.com/your-github-id/repo-forge/actions/workflows/ci.yml/badge.svg)](https://github.com/your-github-id/repo-forge/actions/workflows/ci.yml)
+[![CI](https://github.com/shuiyuewuchen/C5/actions/workflows/ci.yml/badge.svg)](https://github.com/shuiyuewuchen/C5/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-blue.svg)](https://www.python.org/)
 [![零运行时依赖](https://img.shields.io/badge/dependencies-zero-brightgreen.svg)](./pyproject.toml)
@@ -45,8 +45,8 @@
 ### 安装
 
 ```bash
-git clone https://github.com/your-github-id/repo-forge.git
-cd repo-forge
+git clone https://github.com/shuiyuewuchen/C5.git
+cd C5
 # 方式 A：免安装，直接运行
 ./repo-forge --help
 # 方式 B：可编辑安装（推荐，获得命令行入口）

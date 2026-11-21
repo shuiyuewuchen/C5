@@ -32,6 +32,6 @@ All notable changes to this project are documented in this file.
 - 首个可用版本：JSON 配置 → 完整仓库骨架。
 - 内置 MIT / BSD / Apache / Unlicense 四种协议模板。
 
-[0.3.0]: https://github.com/your-github-id/repo-forge/compare/v0.2.0...v0.3.0
-[0.2.0]: https://github.com/your-github-id/repo-forge/compare/v0.1.0...v0.2.0
-[0.1.0]: https://github.com/your-github-id/repo-forge/releases/tag/v0.1.0
+[0.3.0]: https://github.com/shuiyuewuchen/C5/compare/v0.2.0...v0.3.0
+[0.2.0]: https://github.com/shuiyuewuchen/C5/compare/v0.1.0...v0.2.0
+[0.1.0]: https://github.com/shuiyuewuchen/C5/releases/tag/v0.1.0

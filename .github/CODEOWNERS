@@ -1,6 +1,6 @@
 # 默认所有者
-* @your-github-id
+* @shuiyuewuchen
 
 # 核心代码需要额外审查
-/src/repo_forge/config.py @your-github-id
-/src/repo_forge/generator.py @your-github-id
+/src/repo_forge/config.py @shuiyuewuchen
+/src/repo_forge/generator.py @shuiyuewuchen

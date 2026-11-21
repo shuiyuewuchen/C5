@@ -4,15 +4,15 @@
 
 ## 开始之前
 
-1. 先搜一下 [已有 Issue](https://github.com/your-github-id/repo-forge/issues)，避免重复。
+1. 先搜一下 [已有 Issue](https://github.com/shuiyuewuchen/C5/issues)，避免重复。
 2. 大改动请先开 Issue 讨论方案，避免白做。
 3. 遵守 [行为准则](./CODE_OF_CONDUCT.md)。
 
 ## 本地开发环境
 
 ```bash
-git clone https://github.com/your-github-id/repo-forge.git
-cd repo-forge
+git clone https://github.com/shuiyuewuchen/C5.git
+cd C5
 python -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev,yaml]"
 make test

@@ -1,8 +1,8 @@
 blank_issues_enabled: false
 contact_links:
   - name: 💬 问题讨论
-    url: https://github.com/your-github-id/repo-forge/discussions
+    url: https://github.com/shuiyuewuchen/C5/discussions
     about: 使用问题、想法交流请走 Discussions
   - name: 🔐 安全漏洞
-    url: https://github.com/your-github-id/repo-forge/security/advisories
+    url: https://github.com/shuiyuewuchen/C5/security/advisories
     about: 请勿公开提交安全漏洞，使用私有渠道

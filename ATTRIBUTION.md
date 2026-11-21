@@ -40,4 +40,4 @@
 ## 五、如果你复用了本项目
 
 欢迎 fork！请保留本文件与 `LICENSE`，并在你的 `ATTRIBUTION.md` 中补充：
-> 「本项目结构参考了 repo-forge（https://github.com/your-github-id/repo-forge）」。
+> 「本项目结构参考了 repo-forge（https://github.com/shuiyuewuchen/C5）」。
