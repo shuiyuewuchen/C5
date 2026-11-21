@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "repo-forge"
+version = "0.3.0"
+description = "输入一份 JSON/YAML 配置，输出一个文档齐全、社区要素完备、clone 后 5 分钟可运行的 GitHub 开源仓库骨架。"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Elite20" }]
+keywords = ["github", "scaffold", "open-source", "automation", "zero-dependency"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Code Generators",
+]
+
+[project.scripts]
+repo-forge = "repo_forge.cli:main"
+
+[project.optional-dependencies]
+yaml = ["PyYAML>=6.0"]
+dev = ["coverage>=7.0", "ruff>=0.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+repo_forge = ["py.typed"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"
