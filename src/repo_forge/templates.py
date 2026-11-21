@@ -515,7 +515,20 @@ CLI 打印预演结果后再写入。避免用户本地改动被无声吞掉。
 
 **Prompt 意图：** 「把上面的过程整理成 AAR，要具体、要有失败经验、要有可执行的改进方案，不要空话。」
 
-**AI 产出：** 时间线草稿。人工补充根因分析（见 `docs/AAR.md` 的「根因树」）与三条带验收标准的改进项。
+**AI 产出：** 时间线草稿。人工补充根因分析（见 `docs/AAR.md` 的「根因树」）与四条带验收标准的改进项。
+
+### R8 — 最终验收与回归（2026-11-21）
+
+**Prompt 意图：** 「在 examples/sample_output 里真实执行 README 写的每一条命令，不要只看文件是否存在。」
+
+**AI 产出：** 执行清单。
+
+**失败与修正（人工发现）：** `python -m hello_forge --help` 报 `No module named hello_forge.__main__`。
+此前所有 41 项测试都通过，但测试只断言「文件存在」，未断言「生成物可运行」。
+补上 `__main__.py` 模板、把该路径加入必需文件断言，并真实跑通 `python -m hello_forge repo-forge`（输出 `Hello, repo-forge!`）。
+
+**Prompt 优化：** 「验证」的 prompt 从「检查文件齐全」升级为「逐条执行 README 中的命令并贴出真实输出」。
+对应新增改进项 I5（见 AAR）。
 
 ## 三、AI 使用原则（本项目践行）
 
@@ -873,7 +886,7 @@ TEMPLATES["docs/AAR.md"] = """# AAR 复盘 —— {{name}}
 
 - 项目：{{name}}
 - 挑战：C5 GitHub Repository
-- 周期：2026-11-10 → 2026-11-21（约 12 天，7 轮 AI 迭代）
+- 周期：2026-11-10 → 2026-11-21（约 12 天，8 轮 AI 迭代）
 - 目标：产出一个别人 clone 后 5 分钟能跑起来、社区要素齐全的公开仓库
 
 ## 1. 预期 vs 实际
@@ -919,6 +932,13 @@ TEMPLATES["docs/AAR.md"] = """# AAR 复盘 —— {{name}}
 - **处理**：拆出 `plan()` 先预演三类文件（新建 / 跳过 / 覆盖），CLI 打印后再写。
 - **教训**：任何破坏性操作都要有「先看后做」环节。
 
+### P5 — 生成的仓库缺少 `__main__.py`
+- **现象**：最终验收时在 `examples/sample_output/` 中执行 `python -m hello_forge --help`，报 `No module named hello_forge.__main__`。
+- **影响**：README 里写的推荐用法在生成物中直接失效，命中 C5 最忌讳的「文档与行为不一致」。
+- **根因**：模板库只覆盖了 `__init__.py` 和 `core.py`，而 `usage` 默认值却假设存在 `__main__.py`；单元测试只检查了「生成了哪些文件」，没有检查「生成物能否真的运行」。
+- **处理**：补 `src/<package>/__main__.py` 模板；在测试中把它列入必需文件；在 `examples/sample_output/` 中真实执行 `python -m hello_forge --help` 验证。
+- **教训**：单元测试证明「文件存在」，端到端运行才证明「东西能用」。两者都要有。
+
 ## 4. 根因树（5 Why 摘要）
 
 ```
@@ -938,6 +958,7 @@ TEMPLATES["docs/AAR.md"] = """# AAR 复盘 —— {{name}}
 | I2 | 异常路径 prompt 模板 | 所有「生成/解析类」prompt 强制追加「列出 3 个失败场景及期望提示」 | 下一轮 AI 产出的错误信息 100% 包含可执行下一步 |
 | I3 | Unicode 与边界测试矩阵 | 在 `test_config.py` 参数化测试中文/空格/数字开头/超长 name | 覆盖 ≥ 8 组输入，全部通过 |
 | I4 | 破坏性操作预演 | 所有写文件命令默认 dry-run，`--force` 才覆盖 | `plan()` 有独立单测覆盖 skip/overwrite 分支 |
+| I5 | 生成物端到端门禁 | 在 CI 中进入 `examples/sample_output/`，逐条执行 README 写下的命令（含 `python -m <pkg> --help`） | 任一条命令退出码非 0 即 CI 失败；当前 `python -m hello_forge --help` 与 `python -m hello_forge repo-forge` 均返回 0 |
 
 ## 6. 下次如果重来（Start）
 
